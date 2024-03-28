@@ -108,6 +108,21 @@ namespace QrGraduation.Controllers
 
             return CreatedAtAction("GetHistory", new { id = history.IdHistory }, history);
         }
+        [HttpGet("Employee/{id}")]
+        public async Task<ActionResult<IEnumerable<History>>> GetEmployeeHistory(int id)
+        {
+            var employeeHistory = await _context.Histories
+                                                .Where(h => h.EmployeeId == id)
+                                                .ToListAsync();
+
+            if (employeeHistory == null || employeeHistory.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(employeeHistory);
+        }
+
 
         // DELETE: api/Histories/5
         [HttpDelete("{id}")]
@@ -129,6 +144,33 @@ namespace QrGraduation.Controllers
             return NoContent();
         }
 
+        [HttpGet("BySecondName/{secondName}")]
+        public async Task<ActionResult<IEnumerable<History>>> GetHistoriesBySecondName(string secondName)
+        {
+            // Находим ID сотрудников с заданной фамилией
+            var employeeIds = await _context.Employees
+                .Where(e => e.SecondNameEmployee == secondName)
+                .Select(e => e.IdEmployee)
+                .ToListAsync();
+
+            if (!employeeIds.Any())
+            {
+                return NotFound("Сотрудники с такой фамилией не найдены.");
+            }
+
+            // Используя найденные ID, находим соответствующие истории
+            var histories = await _context.Histories
+                .Where(h => employeeIds.Contains(h.EmployeeId))
+                .ToListAsync();
+
+            if (!histories.Any())
+            {
+                return NotFound("Истории для данных сотрудников не найдены.");
+            }
+
+            return histories;
+        }
+        
         private bool HistoryExists(int id)
         {
             return (_context.Histories?.Any(e => e.IdHistory == id)).GetValueOrDefault();
