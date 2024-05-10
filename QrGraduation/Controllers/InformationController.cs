@@ -14,16 +14,33 @@ namespace QrGraduation.Controllers
     public class InformationController : ControllerBase
     {
         private readonly QrCode_DatabaseContext _context;
+        private readonly ILogger<InformationController> _logger;
 
-        public InformationController(QrCode_DatabaseContext context)
+        public InformationController(QrCode_DatabaseContext context, ILogger<InformationController> logger)
         {
             _context = context;
+            _logger = logger; 
         }
+        [HttpGet("latest/{employeeId}")]
+        public async Task<ActionResult<Information>> GetLatestInformation(int employeeId)
+        {
+            var latestInformation = await _context.Information
+                .Where(i => i.EmployeeId == employeeId)
+                .OrderByDescending(i => i.IdInformation)
+                .FirstOrDefaultAsync();
 
+            if (latestInformation == null)
+            {
+                return NotFound();
+            }
+
+            return latestInformation;
+        }
         // GET: api/Information
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Information>>> GetInformation()
         {
+            _logger.LogCritical("Данные о информации пользователя выгружены");
           if (_context.Information == null)
           {
               return NotFound();

@@ -1,0 +1,7 @@
+2024-05-10 10:20:15.4421|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3GO6HL720J" sending SETTINGS frame for stream ID 0 with length 18 and flags NONE.
+2024-05-10 10:20:15.5026|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3GO6HL720J" sending WINDOW_UPDATE frame for stream ID 0 with length 4 and flags 0x0.
+2024-05-10 10:20:15.5026|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3GO6HL720J" received SETTINGS frame for stream ID 0 with length 24 and flags NONE.
+2024-05-10 10:20:15.5026|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3GO6HL720J" sending SETTINGS frame for stream ID 0 with length 0 and flags ACK.
+2024-05-10 10:20:15.5026|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3GO6HL720J" received WINDOW_UPDATE frame for stream ID 0 with length 4 and flags 0x0.
+2024-05-10 10:20:15.5026|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3GO6HL720J" received HEADERS frame for stream ID 1 with length 580 and flags END_STREAM, END_HEADERS, PRIORITY.
+2024-05-10 10:20:15.5496|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN3GO6HL720J" received SETTINGS frame for stream ID 0 with length 0 and flags ACK.

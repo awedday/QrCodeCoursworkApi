@@ -1,0 +1,1 @@
+2024-04-21 20:54:38.7942|TRACE|Microsoft.AspNetCore.Server.Kestrel.Http2|Connection id "0HN325GE3HE7M" sending SETTINGS frame for stream ID 0 with length 18 and flags NONE.

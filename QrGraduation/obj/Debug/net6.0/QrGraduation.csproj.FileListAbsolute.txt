@@ -275,3 +275,7 @@ D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\runtime
 D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\NLog.dll
+D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+D:\study\2semester\graduation\QrGraduation\QrGraduation\bin\Debug\net6.0\nlog.config

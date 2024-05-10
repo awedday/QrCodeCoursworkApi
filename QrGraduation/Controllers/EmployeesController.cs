@@ -128,6 +128,7 @@ namespace QrGraduation.Controllers
             return NoContent();
         }
 
+
         private bool EmployeeExists(int id)
         {
             return (_context.Employees?.Any(e => e.IdEmployee == id)).GetValueOrDefault();

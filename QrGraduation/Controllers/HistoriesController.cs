@@ -175,5 +175,8 @@ namespace QrGraduation.Controllers
         {
             return (_context.Histories?.Any(e => e.IdHistory == id)).GetValueOrDefault();
         }
+
+        
+
     }
 }
